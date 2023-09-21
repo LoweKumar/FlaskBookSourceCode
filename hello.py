@@ -1,13 +1,19 @@
 
-from flask import Flask, make_response, request
+from flask import Flask, make_response, request, redirect
 
 app = Flask(__name__)
 
+
 @app.route('/')
 def index():
-    user_agent = request.headers.get('User-Agent')
-    return '<p>Your browser is {}</p>'.format(user_agent)
-    #return '<h1>Bad Request!</h1>', 400
+    return redirect('http://www.google.com')
+
+
+# @app.route('/')
+# def index():
+#     user_agent = request.headers.get('User-Agent')
+#     return '<p>Your browser is {}</p>'.format(user_agent)
+#     #return '<h1>Bad Request!</h1>', 400
 
 
 # Traditional Way
