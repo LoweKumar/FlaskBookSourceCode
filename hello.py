@@ -1,12 +1,16 @@
 
-from flask import Flask, make_response, request, redirect
+from flask import Flask, make_response, request, redirect, render_template
 
 app = Flask(__name__)
 
 
+# @app.route('/')
+# def index():
+#     return redirect('http://www.google.com')
+
 @app.route('/')
 def index():
-    return redirect('http://www.google.com')
+    return render_template('index.html')
 
 
 # @app.route('/')
@@ -23,10 +27,14 @@ def index():
 #
 # app.add_url_rule('/', 'index',index )
 
+# @app.route('/user/<name>')
+# def user(name):
+#     return 'Hello {}'.format(name)
+
+
 @app.route('/user/<name>')
 def user(name):
-    return 'Hello {}'.format(name)
-
+    return render_template('user.html', name = name)
 
 @app.route('/setCookie')
 def setCookie():
