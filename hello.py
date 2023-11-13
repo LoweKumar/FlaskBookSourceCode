@@ -32,9 +32,9 @@ def index():
 #     return 'Hello {}'.format(name)
 
 
-@app.route('/user/<name>')
-def user(name):
-    return render_template('user.html', name = name)
+@app.route('/user/<name1>')
+def user(name1):
+    return render_template('user.html', name1 = name1)
 
 @app.route('/setCookie')
 def setCookie():
